@@ -12,35 +12,40 @@ country3 = Country.new({"name" => "Italy"})
 country3.save()
 
 city1 = City.new({
-  "name" => "Edinburgh",
-  "country_id" => country1.id
+  "name" => "Edinburgh"
   })
   city1.save()
 city2 = City.new({
-  "name" => "Malaga",
-  "country_id" => country2.id
+  "name" => "Malaga"
   })
   city2.save()
 city3 = City.new({
-  "name" => "Rome",
-  "country_id" => country3.id
+  "name" => "Rome"
   })
 city3.save()
 
+#VISITS
+
 visit1 = Visit.new({
   "country_id" => country1.id,
-  "city_id" = > city_1.id
+  "city_id" => city1.id,
+  "going_date" => "17/08/2018"
+  "return_date" => "02/09/2018"
+  "review" => "Would go back again, haggis is awesome"
   })
 visit1.save()
 
 visit2 = Visit.new({
   "country_id" => country2.id,
-  "city_id" = > city2.id
+  "city_id" => city2.id,
+  "going_date" => "25/11/2018"
+  "return_date" => "/11/2018"
+  "review" => ""
   })
 visit2.save()
 
 visit3 = Visit.new({
   "country_id" => country3.id,
-  "city_id" = > city3.id
+  "city_id" => city3.id
   })
 visit3.save()
