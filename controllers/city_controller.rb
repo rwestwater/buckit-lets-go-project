@@ -11,8 +11,3 @@ get '/city/:id' do
  @city = City.find(params['id'].to_i)
  erb(:"city/show")
 end
-
-# CREATE travel
-get '/city/new' do
-  erb(:new)
-end

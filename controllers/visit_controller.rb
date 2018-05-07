@@ -11,3 +11,13 @@ get '/visit/:id' do
  @visit = Visit.find(params['id'].to_i)
  erb(:"visit/show")
 end
+
+# CREATE travel
+get '/visit/new' do
+  erb(:"visit/new")
+end
+
+post'/visit/new' do
+  @visit= Visit.new()
+  @visit.save()
+end

@@ -39,13 +39,16 @@ visit2 = Visit.new({
   "country_id" => country2.id,
   "city_id" => city2.id,
   "going_date" => "25/11/2018"
-  "return_date" => "/11/2018"
-  "review" => ""
+  "return_date" => "30/11/2018"
+  "review" => "Malaga city is great for food"
   })
 visit2.save()
 
 visit3 = Visit.new({
   "country_id" => country3.id,
   "city_id" => city3.id
+  "going_date" => "30/07/2019",
+  "return_date" => "30/08/2019",
+  "review" => "N/A"
   })
 visit3.save()
