@@ -26,3 +26,21 @@ city3 = City.new({
   "country_id" => country3.id
   })
 city3.save()
+
+visit1 = Visit.new({
+  "country_id" => country1.id,
+  "city_id" = > city_1.id
+  })
+visit1.save()
+
+visit2 = Visit.new({
+  "country_id" => country2.id,
+  "city_id" = > city2.id
+  })
+visit2.save()
+
+visit3 = Visit.new({
+  "country_id" => country3.id,
+  "city_id" = > city3.id
+  })
+visit3.save()
