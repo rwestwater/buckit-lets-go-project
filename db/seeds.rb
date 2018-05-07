@@ -2,6 +2,8 @@ require_relative( "../models/city.rb" )
 require_relative( "../models/country.rb" )
 require_relative( "../models/visit.rb" )
 
+Country.delete_all()
+
 country1 = Country.new({"name" => "Scotland"})
 country1.save()
 country2 = Country.new({"name" => "Spain"})
