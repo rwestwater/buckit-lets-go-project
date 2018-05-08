@@ -4,7 +4,7 @@ require_relative( '../models/visit.rb' )
 
 get '/visit' do
   @visit = Visit.all()
-  erb ( :"visit/index" )
+  erb (:"visit/index")
 end
 
 get '/visit/new' do
@@ -19,5 +19,5 @@ end
 post '/visit/new' do
   @visit = Visit.new(params)
   @visit.save()
-  redirect to ("/visit")
+  redirect to (:"/visit")
 end
