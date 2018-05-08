@@ -11,7 +11,7 @@ def initialize(options)
 end
 
 def save()
-  sql = "INSERT INTO countries name VALUES $1 RETURNING id"
+  sql = "INSERT INTO countries (name) VALUES ($1) RETURNING id"
   values = [@name]
   country_data = SqlRunner.run(sql, values)
   @id = country_data.first()['id'].to_i

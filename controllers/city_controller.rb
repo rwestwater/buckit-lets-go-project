@@ -9,6 +9,7 @@ get '/city' do
 end
 
 get '/city/new' do
+  @countries = Country.all
   erb(:'city/new')
 end
 
@@ -19,7 +20,7 @@ end
 
 #CREATE FUNCTION
 post '/city/new' do
-  @city = city.new(params)
+  @city = City.new(params)
   @city.save()
   redirect to (:'/city')
 end

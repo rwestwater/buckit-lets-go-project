@@ -27,7 +27,7 @@ end
 #UPDATE FUNCTIONS
 get '/country/:id/edit' do
   @country = Country.find(params[:id])
-  erb(:'country/edit')
+  redirect to (:'/country')
 end
 
 post '/country/:id/update' do
