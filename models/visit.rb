@@ -1,22 +1,23 @@
 require_relative('../db/sql_runner')
 
+
+#REMOVE ALL Country_ids
+
 class Visit
 
-attr_reader :id, :country_id, :city_id, :going_date, :return_date, :review
+attr_reader :id, :city_id, :going_date, :return_date, :review
 
 def initialize(options)
   @id = options['id'].to_i
   @city_id = options['city_id'].to_i
-  @country_id = options['country_id'].to_i
-  @going_date = options['going_date'].to_i
-  @return_date = options['return_date'].to_i
+  @going_date = options['going_date']
+  @return_date = options['return_date']
   @review = options['review']
 end
 
 def save()
   sql = "INSERT INTO visits(
   city_id,
-  country_id,
   going_date,
   return_date,
   review
@@ -25,11 +26,10 @@ def save()
     $1,
     $2,
     $3,
-    $4,
-    $5
+    $4
   )
   RETURNING id"
-  values = [@city_id, @country_id, @going_date, @return_date, @review]
+  values = [@city_id, @going_date, @return_date, @review]
   visit_data = SqlRunner.run(sql, values)
   @id = visit_data.first()['id'].to_i
 end

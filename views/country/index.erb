@@ -1,1 +1,12 @@
-<h1>Countries</h1>
+<h1>A list of your current countries<br> To add a new country, please click new country</h1>
+
+<% for country in @countries  %> <!-- why doesn't country.name work?! -->
+  <p><h3>Name: <%= country.name %></h3></p>
+  <p><h3><a href="/country/<%= country.id %>">Show Country</a></h3></p>
+
+
+
+
+
+  <hr />
+<% end  %>
