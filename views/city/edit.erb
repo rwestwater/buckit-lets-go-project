@@ -1,0 +1,9 @@
+
+<form method="post" action="/city/<%= @city.id %>/update">
+
+  <label for="city">Please edit your city:</label>
+    <input type="text" name="name" id="city" value="<%= @city.name %>">
+
+  <input type="submit" value="Let's go!">
+
+</form>

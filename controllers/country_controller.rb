@@ -32,9 +32,8 @@ end
 
 post '/country/:id/update' do
   @country = Country.new(params)
-
   @country.update()
-  erb(:'country/update')
+  erb(:'/country/show')
 end
 
 #DELETE FUNCTIONS

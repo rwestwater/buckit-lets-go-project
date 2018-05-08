@@ -1,8 +1,6 @@
 require_relative('../db/sql_runner')
 
 
-#REMOVE ALL Country_ids
-
 class Visit
 
 attr_reader :id, :city_id, :going_date, :return_date, :review
@@ -35,11 +33,22 @@ def save()
 end
 
 def update()
-  sql = "UPDATE countries SET (name) = ($1) WHERE id = $2"
+  sql = "UPDATE countries SET name = $1 WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 
+  def locations()
+    sql ="SELECT cities.*, countries.* FROM countries INNER JOIN cities ON countries.id = cities.country_id INNER JOIN visits
+ON cities.id = visits.city_id;"
+    values = [@id]
+    location_hashes = SqlRunner.run(sql, values)
+    locations = location_hashes.map {|location_hash| Visit.new(location_hash)}
+    return locations
+
+  end
+
+#CLASS METHOD
   def self.delete_all()
     sql = "DELETE FROM visits;"
     SqlRunner.run(sql)
