@@ -2,12 +2,15 @@
 
 <% for country in @countries  %>
   <p><h3>Name: <%= country.name %></h3></p>
-  <p><h3><a href="/country/<%= country.id %>">Show Country</a></h3></p>
+
 
   <form method="post" action="/country/<%=country.id %>/delete">
     <input type="submit" value="Delete Country">
   </form>
 
+  <form method="get" action="/country/<%=country.id %>/edit">
+    <input type="submit" value="Edit Country">
+  </form>
 
 
   <hr />

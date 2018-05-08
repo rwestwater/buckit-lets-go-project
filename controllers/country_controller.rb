@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/country')
 
+# READ FUNCTIONS
 get '/country' do
   @countries = Country.all()
   erb (:'country/index')
@@ -16,14 +17,29 @@ get '/country/:id' do
   erb(:'country/show')
 end
 
+#CREATE FUNCTIONS
 post '/country/new' do
   @country = Country.new(params)
   @country.save()
-  redirect to ('/country')
+  redirect to (:'/country')
 end
 
+#UPDATE FUNCTIONS
+get '/country/:id/edit' do
+  @country = Country.find(params[:id])
+  erb(:'country/edit')
+end
+
+post '/country/:id/update' do
+  @country = Country.new(params)
+
+  @country.update()
+  erb(:'country/update')
+end
+
+#DELETE FUNCTIONS
 post '/country/:id/delete' do
   @country = Country.find(params[:id])
   @country.delete()
-  redirect to ('/country')
+  redirect to (:'/country')
 end

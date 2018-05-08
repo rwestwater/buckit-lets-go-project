@@ -1,0 +1,9 @@
+
+<form method="post" action="/country/<%= @country.id %>/update">
+
+  <label for="country">Please edit your country:</label>
+    <input type="text" name="name" id="country" value="<%= @country.name %>">
+
+  <input type="submit" value="Let's go!">
+
+</form>

@@ -15,6 +15,7 @@ get '/city/:id' do
  @city = City.find(params['id'].to_i)
  erb(:"city/show")
 end
+
 post '/city/new' do
   @city = city.new(params)
   @city.save()
