@@ -5,36 +5,40 @@ header{
 
 body {
   background-color: oldlace;
+  color: black;
 }
 
 h1{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em;
   margin: 2em;
-  color: red;
+  color: black;
+  text-align: center;
 }
 
 h3{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em;
   margin: 2em;
-  color: grey;
+  color: black;
 }
 
 p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em;
   margin: 2em;
+  color: black;
 }
 
-nav {
+
+/* nav {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em;
   border:
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-}
+} */
 
 ul {
     list-style-type: none;

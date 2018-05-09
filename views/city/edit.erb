@@ -4,6 +4,14 @@
   <label for="city">Please edit your city:</label>
     <input type="text" name="name" id="city" value="<%= @city.name %>">
 
+    <label for="country-select">Country:</label>
+      <select name="country_id" id="country-select">
+        <% @countries.each do |country| %>
+            <option value="<%= country.id %>" <%="selected" if country.id == @city.country_id %>>
+            <%= country.name.capitalize %></option>
+        <% end %>
+      </select>
+
   <input type="submit" value="Let's go!">
 
 </form>

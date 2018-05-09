@@ -3,6 +3,7 @@ require_relative( "../models/country.rb" )
 require_relative( "../models/visit.rb" )
 require('pry')
 
+Visit.delete_all()
 City.delete_all()
 Country.delete_all()
 

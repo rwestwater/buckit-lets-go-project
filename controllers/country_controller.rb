@@ -21,24 +21,24 @@ end
 post '/country/new' do
   @country = Country.new(params)
   @country.save()
-  redirect to (:'/country')
+  redirect ('/country')
 end
 
 #UPDATE FUNCTIONS
 get '/country/:id/edit' do
   @country = Country.find(params[:id])
-  redirect to (:'/country')
+  erb(:'/country/edit')
 end
 
 post '/country/:id/update' do
   @country = Country.new(params)
   @country.update()
-  erb(:'/country/show')
+  redirect('/country')
 end
 
 #DELETE FUNCTIONS
 post '/country/:id/delete' do
   @country = Country.find(params[:id])
   @country.delete()
-  redirect to (:'/country')
+  redirect ('/country')
 end

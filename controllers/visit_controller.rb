@@ -8,6 +8,8 @@ get '/visit' do
 end
 
 get '/visit/new' do
+  @countries = Country.all
+  @cities = City.all
   erb(:"visit/new")
 end
 

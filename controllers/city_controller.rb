@@ -22,11 +22,12 @@ end
 post '/city/new' do
   @city = City.new(params)
   @city.save()
-  redirect to (:'/city')
+  redirect ('/city')
 end
 
 #UPDATE FUNCTIONS
 get '/city/:id/edit' do
+  @countries = Country.all
   @city = City.find(params[:id])
   erb(:'/city/edit')
 end
@@ -34,12 +35,12 @@ end
 post '/city/:id/update' do
   @city = City.new(params)
   @city.update()
-  erb(:'/city')
+  redirect('/city')
 end
 
 #DELETE FUNCTIONS
 post '/city/:id/delete' do
   @city = City.find(params[:id])
   @city.delete()
-  redirect to (:'/city')
+  redirect ('/city')
 end

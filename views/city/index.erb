@@ -2,8 +2,6 @@
 
 <% for city in @cities  %>
   <p><h3>City: <%= city.name %></h3></p>
-  <p><h3>Country: <%= @country.name  %></h3></p>
-  <p><h3><a href="/city/<%= city.id %>">Show City</a></h3></p>
 
     <form method="post" action="/city/<%=city.id %>/delete">
       <input type="submit" value="Delete City">
