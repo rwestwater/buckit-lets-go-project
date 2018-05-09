@@ -5,7 +5,7 @@
 
     <select name="city_id" id="city-select">
       <% @cities.each do |city| %>
-      <option value=<%= city.id %>>
+      <option value="<%= city.id %>" <%="selected" if city.id == @visit.city_id %>>
         <%= city.name.capitalize %></option>
         <% end %>
       </select>

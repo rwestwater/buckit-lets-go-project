@@ -32,8 +32,8 @@ class Visit
 end
 
 def update()
-  sql = "UPDATE visits SET name = $1 WHERE id = $2"
-  values = [@name, @id]
+  sql = "UPDATE visits SET review = $1 WHERE id = $2"
+  values = [@review, @id]
   SqlRunner.run(sql, values)
 end
 
