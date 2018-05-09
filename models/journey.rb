@@ -10,4 +10,10 @@ class Journey
     @review = params['review']
   end
 
+  def delete()
+    sql = "DELETE FROM "
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
 end

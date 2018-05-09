@@ -1,11 +1,27 @@
 <h1>A list of all the wonderful places you're going..</h1>
-<h2>Your future journeys: </h2>
+<h2>Your future travel plans: </h2>
 
-<% @journeys.each do |journey|  %>
+<% @visits.each do |visit|  %>
  <p><b>City:</b> <%= journey.city_name  %>
     <b>Country:</b> <%= journey.country_name  %>
     <b>Leaving Date:</b> <%= journey.going_date  %>
     <b>Return Date:</b> <%= journey.return_date  %>
     <b>Things To Do:</b> <%= journey.review  %></p>
+
+    <form method="post" action="/visit/delete">
+      <input type="submit" value="Delete Travel Plans">
+    </form>
+
+    <form method="get" action="/visit/new">
+      <input type="submit" value="Edit Travel Plans">
+    </form>
+
+
  <hr/>
+
+
+
+
+
+
   <% end %>

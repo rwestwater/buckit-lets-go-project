@@ -31,7 +31,7 @@ class Visit
   values = [@city_id, @going_date, @return_date, @review]
   visit_data = SqlRunner.run(sql, values)
   @id = visit_data.first()['id'].to_i
-  end
+end
 
 def update()
   sql = "UPDATE countries SET name = $1 WHERE id = $2"
@@ -67,11 +67,18 @@ def self.find(id)
   return result
 end
 
-def self.journeys()
-  sql ="SELECT cities.name as city_name, countries.name as country_name, visits.going_date, visits.return_date, visits.review FROM countries INNER JOIN cities ON countries.id = cities.country_id INNER JOIN visits ON cities.id = visits.city_id;"
-  journey_hashes = SqlRunner.run(sql)
-  journeys = journey_hashes.map {|journey_hash| Journey.new(journey_hash)}
-  return journeys
+def city()
+  sql = "SELECT * FROM cities WHERE id = $1"
+  values = [@city_id]
+  result = SqlRunner.run(sql, values).first()
+  return City.new(result)
 end
+
+# def self.journeys()
+#   sql ="SELECT cities.name as city_name, countries.name as country_name, visits.going_date, visits.return_date, visits.review FROM countries INNER JOIN cities ON countries.id = cities.country_id INNER JOIN visits ON cities.id = visits.city_id;"
+#   journey_hashes = SqlRunner.run(sql)
+#   journeys = journey_hashes.map {|journey_hash| Journey.new(journey_hash)}
+#   return journeys
+# end
 
 end
