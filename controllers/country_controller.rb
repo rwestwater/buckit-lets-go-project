@@ -12,11 +12,6 @@ get '/country/new' do
   erb(:'country/new')
 end
 
-get '/country/:id' do
-  @country = Country.find(params['id'].to_i)
-  erb(:'country/show')
-end
-
 #CREATE FUNCTIONS
 post '/country/new' do
   @country = Country.new(params)

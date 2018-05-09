@@ -13,11 +13,6 @@ get '/city/new' do
   erb(:'city/new')
 end
 
-get '/city/:id' do
- @city = City.find(params['id'].to_i)
- erb(:'city/show')
-end
-
 #CREATE FUNCTION
 post '/city/new' do
   @city = City.new(params)

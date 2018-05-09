@@ -14,11 +14,6 @@ get '/visit/new' do
   erb(:'visit/new')
 end
 
-get '/visit/:id' do
-  @visit = Visit.find(params['id'].to_i)
-  erb(:'visit/show')
-end
-
 #CREATE FUNCTIONS
 post '/visit/new' do
   visit = Visit.new(params)
@@ -28,6 +23,7 @@ end
 
 #UPDATE FUNCTIONS
 get '/visit/:id/edit' do
+  @cities = City.all
   @visit = Visit.find(params[:id])
   erb(:'/visit/edit')
 end
