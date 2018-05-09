@@ -1,0 +1,9 @@
+
+<form method="post" action="/visit/<%= @visit.id %>/update">
+
+  <label for="journey">Please edit your journey:</label>
+    <input type="text" name="name" id="journey" value="<%= @visit.name %>">
+
+  <input type="submit" value="Let's go!">
+
+</form>

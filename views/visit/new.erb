@@ -2,31 +2,25 @@
 <form method="post" action="/visit/new">
 
 
-  <label for="country-select">Select Country:</label>
-  <select name="country_id" id="country-select">
-    <% @countries.each do |country| %>
-    <option value=<%= country.id %>>
-      <%= country.name.capitalize %></option>
-      <% end %>
-    </select>
-
-    <label for="city-select">Select City:</label>
-    <select name="country_id" id="country-select">
-      <% @cities.each do |country| %>
-      <option value=<%= country.id %>>
-        <%= country.name.capitalize %></option>
+  <label for="city-select">Select City:</label>
+    <select name="city_id" id="city-select">
+      <% @cities.each do |city| %>
+      <option value=<%= city.id %>>
+        <%= city.name.capitalize %></option>
         <% end %>
       </select>
 
       <label for="leaving-date">Date Leaving:</label>
-      <input type="date" name="date" id="date">
+      <input type="date" name="going_date" id="date">
 
       <label for="return-date">Return Date:</label>
-      <input type="date" name="date" id="date">
+      <input type="date" name="return_date" id="date">
 
-      <label for="comments">Comments:</label>
-      <input type="text" name="comments" id="comments">
+      <label for="comments">Things to do:</label>
+      <input type="text" name="review" id="comments">
 
       <input type="submit" value="Let's go!">
 
     </form>
+
+    <a href="/visit">All your planned journies</a>

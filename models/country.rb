@@ -29,8 +29,7 @@ def update()
   end
 
   def delete()
-    sql = "DELETE FROM countries
-    WHERE id = $1"
+    sql = "DELETE FROM countries WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

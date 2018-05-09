@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('../models/journey')
 
 
 class Visit
@@ -38,12 +39,12 @@ def update()
   SqlRunner.run(sql, values)
 end
 
-def journies()
-  sql ="SELECT cities.*, countries.* FROM countries INNER JOIN cities ON countries.id = cities.country_id INNER JOIN visits ON cities.id = visits.city_id"
-  values = [@id]
-  journey_hashes = SqlRunner.run(sql, values)
-  journies = journey_hashes.map {|journey_hash| Visit.new(journey_hash)}
-  return journies
+def journeys()
+  sql ="SELECT cities.name as city_name, countries.name as country_name, visits.going_date, visits.return_date, visits.revie
+  w FROM countries INNER JOIN cities ON countries.id = cities.country_id INNER JOIN visits ON cities.id = visits.city_id;"
+  journey_hashes = SqlRunner.run(sql)
+  journeys = journey_hashes.map {|journey_hash| Journey.new(journey_hash)}
+  return journeys
 end
 
 #CLASS METHOD
