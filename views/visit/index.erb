@@ -2,10 +2,10 @@
 <h2>Your future journeys: </h2>
 
 <% @journeys.each do |journey|  %>
- <p><%= journey.city_name  %></p>
- <p><%= journey.country_name  %></p>
- <p><%= journey.going_date  %></p>
- <p><%= journey.return_date  %></p>
- <p><%= journey.review  %></p>
+ <p><b>City:</b> <%= journey.city_name  %>
+    <b>Country:</b> <%= journey.country_name  %>
+    <b>Leaving Date:</b> <%= journey.going_date  %>
+    <b>Return Date:</b> <%= journey.return_date  %>
+    <b>Things To Do:</b> <%= journey.review  %></p>
  <hr/>
   <% end %>
