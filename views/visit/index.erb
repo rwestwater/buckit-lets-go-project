@@ -1,2 +1,11 @@
 <h1>A list of all the wonderful places you're going..</h1>
-<p>Your future journeys: <%= %></p>
+<h2>Your future journeys: </h2>
+
+<% @journeys.each do |journey|  %>
+ <p><%= journey.city_name  %></p>
+ <p><%= journey.country_name  %></p>
+ <p><%= journey.going_date  %></p>
+ <p><%= journey.return_date  %></p>
+ <p><%= journey.review  %></p>
+ <hr/>
+  <% end %>
