@@ -2,22 +2,22 @@
 <h2>Your future travel plans: </h2>
 
 <% @visits.each do |visit|  %>
- <p><b>City:</b> <%= journey.city_name  %>
-    <b>Country:</b> <%= journey.country_name  %>
-    <b>Leaving Date:</b> <%= journey.going_date  %>
-    <b>Return Date:</b> <%= journey.return_date  %>
-    <b>Things To Do:</b> <%= journey.review  %></p>
+<p><b>City:</b> <%= visit.city.name  %>
+  <b>Country:</b> <%= visit.country.name %>
+  <b>Leaving Date:</b> <%= visit.going_date  %>
+  <b>Return Date:</b> <%= visit.return_date  %>
+  <b>Things To Do:</b> <%= visit.review  %></p>
 
-    <form method="post" action="/visit/delete">
-      <input type="submit" value="Delete Travel Plans">
-    </form>
+  <form method="post" action="/visit/ <%=visit.id%>/delete">
+    <input type="submit" value="Delete Travel Plans">
+  </form>
 
-    <form method="get" action="/visit/new">
-      <input type="submit" value="Edit Travel Plans">
-    </form>
+  <form method="get" action="/visit/<%=visit.id%>/edit">
+    <input type="submit" value="Edit Travel Plans">
+  </form>
 
 
- <hr/>
+  <hr/>
 
 
 

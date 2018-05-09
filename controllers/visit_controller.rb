@@ -4,7 +4,7 @@ require_relative( '../models/visit.rb' )
 
 # READ FUNCTIONS
 get '/visit' do
-  @journeys = Visit.journeys()
+  @visits = Visit.all()
   erb(:'visit/index')
 end
 

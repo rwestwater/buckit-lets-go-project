@@ -25,7 +25,7 @@ city2 = City.new({
   })
   city2.save()
 city3 = City.new({
-  "name" => "Rome",
+  "name" => "Vatican City",
   "country_id" => country3.id
   })
 city3.save()
@@ -46,7 +46,7 @@ visit2 = Visit.new({
   "city_id" => city2.id,
   "going_date" => "2017-11-25",
   "return_date" => "2017-12-01",
-  "review" => "Malaga city is great for food"
+  "review" => "Needs more wine"
   })
 visit2.save()
 
@@ -55,7 +55,7 @@ visit3 = Visit.new({
   "city_id" => city3.id,
   "going_date" => "2017-08-30",
   "return_date" => "2017-09-30",
-  "review" => "N/A"
+  "review" => "The Pope is a cool guy"
   })
 visit3.save()
 

@@ -42,17 +42,11 @@ class City
       SqlRunner.run( sql, values )
     end
 
-    def self.delete_all()
-      sql = "DELETE FROM cities"
-      SqlRunner.run(sql)
-    end
-
     def delete()
-      #do i also need to delete from countries here?
       sql = "DELETE FROM cities
       WHERE id = $1"
       values = [@id]
-      SqlRunner.run( sql, values )
+      SqlRunner.run(sql, values)
     end
 
     def country()
@@ -62,10 +56,16 @@ class City
       return Country.new(result)
     end
 
+    #CLASS METHODS
+
+    def self.delete_all()
+      sql = "DELETE FROM cities"
+      SqlRunner.run(sql)
+    end
+
     def self.all()
       sql = "SELECT * FROM cities"
-      cities = SqlRunner.run( sql )
-      #p cities -- Daniel 2k18
+      cities = SqlRunner.run(sql)
       result = cities.map {|city| City.new(city)}
       return result
     end
@@ -77,6 +77,7 @@ class City
       result = City.new(city.first)
       return result
     end
+
 
 
   end

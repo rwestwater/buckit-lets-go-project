@@ -1,6 +1,4 @@
 require_relative('../db/sql_runner')
-require_relative('../models/journey')
-
 
 class Visit
 
@@ -39,21 +37,20 @@ def update()
   SqlRunner.run(sql, values)
 end
 
-#CLASS METHOD
-def self.delete_all()
-  sql = "DELETE FROM visits;"
-  SqlRunner.run(sql)
-end
-
 def delete()
-  sql = "DELETE FROM visits;
-  WHERE id = $1"
+  sql = "DELETE FROM visits WHERE id = $1"
   values = [@id]
   SqlRunner.run( sql, values )
 end
 
+#CLASS METHOD
+def self.delete_all()
+  sql = "DELETE FROM visits"
+  SqlRunner.run(sql)
+end
+
 def self.all()
-  sql = "SELECT * FROM visits;"
+  sql = "SELECT * FROM visits"
   visits = SqlRunner.run(sql)
   result = visits.map {|visit| Visit.new(visit)}
   return result
@@ -72,6 +69,14 @@ def city()
   values = [@city_id]
   result = SqlRunner.run(sql, values).first()
   return City.new(result)
+end
+
+def country()
+  country_id = self.city.country_id
+  sql = "SELECT * FROM countries WHERE id = $1"
+  values = [country_id]
+  result = SqlRunner.run(sql, values)
+  return Country.new(result.first)
 end
 
 # def self.journeys()
