@@ -1,16 +1,16 @@
 <h1>A list of your current cities</h1>
 
 <% for city in @cities  %>
-  <p><h3>City: <%= city.name %></h3></p>
+<p><h3>City: <%= city.name %></h3></p>
 
 
-    <form method="post" class="inline" action="/city/<%=city.id %>/delete">
-      <input type="submit" value="Delete City">
-    </form>
+<form method="post" class="inline" action="/city/<%=city.id %>/delete">
+  <input type="submit" value="Delete City">
+</form>
 
-    <form method="get" class="inline" action="/city/<%=city.id %>/edit">
-      <input type="submit" value="Edit City">
-    </form>
+<form method="get" class="inline" action="/city/<%=city.id %>/edit">
+  <input type="submit" value="Edit City">
+</form>
 
-  <hr />
-  <% end  %>
+<hr />
+<% end  %>

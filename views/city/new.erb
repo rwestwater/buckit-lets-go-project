@@ -8,7 +8,7 @@
     <select name="country_id" id="country-select">
       <% @countries.each do |country| %>
       <option value=<%= country.id %>>
-        <%= country.name.capitalize %></option>
+        <%= country.name.upcase %></option>
         <% end %>
       </select>
 

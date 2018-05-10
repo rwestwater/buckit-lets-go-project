@@ -1,22 +1,22 @@
 <h1>A list of your current countries</h1>
 
 <% for country in @countries  %>
-  <p><h3>Name: <%= country.name %></h3></p>
+<p><h3>Name: <%= country.name %></h3></p>
 
 
-  <form method="post" class="inline" action="/country/<%=country.id %>/delete">
-    <input type="submit" value="Delete Country">
-  </form>
+<form method="post" class="inline" action="/country/<%=country.id %>/delete">
+  <input type="submit" value="Delete Country">
+</form>
 
-  <form method="get" class="inline" action="/country/<%= country.id %>/edit">
-    <input type="submit" value="Edit Country">
-  </form>
+<form method="get" class="inline" action="/country/<%= country.id %>/edit">
+  <input type="submit" value="Edit Country">
+</form>
 
-  <form method="get" class="inline" action="/city/new">
-    <input type="submit" value="Add City">
-  </form>
+<form method="get" class="inline" action="/city/new">
+  <input type="submit" value="Add City">
+</form>
 
-  <hr />
+<hr />
 
 
 <% end  %>
