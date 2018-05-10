@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-GB" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Buckit, Lets Go!</title>
-    <link rel="stylesheet" href="/style.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <link rel=icon href=/favicon.png>
+  <title>Buckit, Lets Go!</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
 
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/country/new">Countries</a>
-        </li>
-        <!--<li>
-          <a href="/country">Show Countries</a>
-        </li>-->
-        <li>
-          <a href="/city/new">Cities</a>
-        </li>
-        <li>
-        <!--  <a href="/city">Show Cities</a>
-        </li>-->
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/country/new">Countries</a>
+      </li>
+      <li>
+        <a href="/city/new">Cities</a>
+      </li>
+      <li>
         <li>
           <a href="/visit/new">New Journey</a>
         </li>
         <li>
-        <!--<a href="/visit/past">Past Journeys</a>-->
         </li>
         <li id="title"> Buck-it, Let's Go!</li>
       </ul>
     </nav>
 
-  <%= yield  %>
+    <%= yield  %>
   </body>
-</html>
+  </html>

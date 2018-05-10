@@ -82,11 +82,4 @@ class Visit
     return result
   end
 
-  # def self.journeys()
-  #   sql ="SELECT cities.name as city_name, countries.name as country_name, visits.going_date, visits.return_date, visits.review FROM countries INNER JOIN cities ON countries.id = cities.country_id INNER JOIN visits ON cities.id = visits.city_id;"
-  #   journey_hashes = SqlRunner.run(sql)
-  #   journeys = journey_hashes.map {|journey_hash| Journey.new(journey_hash)}
-  #   return journeys
-  # end
-
 end

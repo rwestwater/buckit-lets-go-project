@@ -40,44 +40,44 @@ class City
       WHERE id = $3"
       values = [@name, @country_id, @id]
       SqlRunner.run( sql, values )
-    end
-
-    def delete()
-      sql = "DELETE FROM cities
-      WHERE id = $1"
-      values = [@id]
-      SqlRunner.run(sql, values)
-    end
-
-    def country()
-      sql = "SELECT * FROM countries WHERE id = $1"
-      values = [@country_id]
-      result = SqlRunner.run(sql, values).first()
-      return Country.new(result)
-    end
-
-    #CLASS METHODS
-
-    def self.delete_all()
-      sql = "DELETE FROM cities"
-      SqlRunner.run(sql)
-    end
-
-    def self.all()
-      sql = "SELECT * FROM cities"
-      cities = SqlRunner.run(sql)
-      result = cities.map {|city| City.new(city)}
-      return result
-    end
-
-    def self.find(id)
-      sql = "SELECT * FROM cities WHERE id = $1"
-      values = [id]
-      city = SqlRunner.run(sql, values)
-      result = City.new(city.first)
-      return result
-    end
-
-
-
   end
+
+  def delete()
+    sql = "DELETE FROM cities
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def country()
+    sql = "SELECT * FROM countries WHERE id = $1"
+    values = [@country_id]
+    result = SqlRunner.run(sql, values).first()
+    return Country.new(result)
+  end
+
+  #CLASS METHODS
+
+  def self.delete_all()
+    sql = "DELETE FROM cities"
+    SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM cities"
+    cities = SqlRunner.run(sql)
+    result = cities.map {|city| City.new(city)}
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM cities WHERE id = $1"
+    values = [id]
+    city = SqlRunner.run(sql, values)
+    result = City.new(city.first)
+    return result
+  end
+
+
+
+end

@@ -2,23 +2,23 @@ require_relative('../db/sql_runner')
 
 class Country
 
-attr_reader :id
-attr_accessor :name
+  attr_reader :id
+  attr_accessor :name
 
-def initialize(options)
-  @id = options['id'].to_i
-  @name = options['name']
-end
+  def initialize(options)
+    @id = options['id'].to_i
+    @name = options['name']
+  end
 
-def save()
-  sql = "INSERT INTO countries (name) VALUES ($1) RETURNING id"
-  values = [@name]
-  country_data = SqlRunner.run(sql, values)
-  @id = country_data.first()['id'].to_i
-end
+  def save()
+    sql = "INSERT INTO countries (name) VALUES ($1) RETURNING id"
+    values = [@name]
+    country_data = SqlRunner.run(sql, values)
+    @id = country_data.first()['id'].to_i
+  end
 
-def update()
-  sql = "UPDATE countries SET name = $1 WHERE id = $2"
+  def update()
+    sql = "UPDATE countries SET name = $1 WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end

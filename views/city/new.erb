@@ -1,21 +1,21 @@
 <div class="textbox">
 
-<form method="post" action="/city/new">
-  <label for="/city">Please enter a new city:</label>
+  <form method="post" action="/city/new">
+    <label for="/city">Please enter a new city:</label>
     <input type="text" name="name" id="city">
 
-  <label for="country-select">Select Country:</label>
+    <label for="country-select">Select Country:</label>
     <select name="country_id" id="country-select">
       <% @countries.each do |country| %>
-          <option value=<%= country.id %>>
-          <%= country.name.capitalize %></option>
-      <% end %>
-    </select>
+      <option value=<%= country.id %>>
+        <%= country.name.capitalize %></option>
+        <% end %>
+      </select>
 
-      <input type="submit" value="Let's go!">
+      <input type="submit" value="Lets go!">
 
-</form>
-</div>
+    </form>
+  </div>
 
 
-<p><a href="/city">All Cities</a></p>
+  <p><a href="/city">All Cities</a></p>
