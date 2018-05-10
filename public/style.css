@@ -1,11 +1,13 @@
 header{
-  background-image: url("toronto.jgp");
+  background-image: linear-gradient
+  (to left top, #d0e692, #a3d89c, #81c6a6, #6fb2a8, #6b9da1);
   background-repeat: no-repeat;
 }
 
 body {
   background-color: oldlace;
   color: black;
+  margin: 0;
 }
 
 h1{
@@ -31,14 +33,14 @@ p {
 }
 
 
-/* nav {
+nav {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em;
   border:
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-} */
+}
 
 ul {
     list-style-type: none;
@@ -62,4 +64,13 @@ li a {
 
 li a:hover {
     background-color: #111;
+}
+
+#title {
+  text-align: right;
+  position: relative;
+  left: 44em;
+  top: 0.8em;
+  color: white;
+  z-index: 8;
 }
