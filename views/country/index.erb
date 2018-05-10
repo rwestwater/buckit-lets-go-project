@@ -4,15 +4,15 @@
   <p><h3>Name: <%= country.name %></h3></p>
 
 
-  <form method="post" action="/country/<%=country.id %>/delete">
+  <form method="post" class="inline" action="/country/<%=country.id %>/delete">
     <input type="submit" value="Delete Country">
   </form>
 
-  <form method="get" action="/country/<%= country.id %>/edit">
+  <form method="get" class="inline" action="/country/<%= country.id %>/edit">
     <input type="submit" value="Edit Country">
   </form>
 
-  <form method="get" action="/city/new">
+  <form method="get" class="inline" action="/city/new">
     <input type="submit" value="Add City">
   </form>
 

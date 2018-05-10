@@ -1,37 +1,44 @@
-header{
-  background-image: linear-gradient
-  (to left top, #d0e692, #a3d89c, #81c6a6, #6fb2a8, #6b9da1);
-  background-repeat: no-repeat;
-}
-
 body {
-  background-color: oldlace;
+  background-color: #D3E9F3;
   color: black;
   margin: 0;
 }
 
 h1{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
-  margin: 2em;
+  font-size: 3em;
+  margin: 1em;
   color: black;
   text-align: center;
 }
 
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  margin: 1em;
+  color: black;
+
+}
+
 h3{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
-  margin: 2em;
+  margin: 1em;
+  color: black;
+}
+
+#visit_list{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 1em;
   color: black;
 }
 
 p {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
-  margin: 2em;
+  font-size: 1em;
+  margin: 0.5%;
   color: black;
+  padding: 0.1em;
 }
-
 
 nav {
   font-family: Arial, Helvetica, sans-serif;
@@ -73,4 +80,17 @@ li a:hover {
   top: 0.8em;
   color: white;
   z-index: 8;
+}
+
+.textbox {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin-top: 0.8em;
+  margin-left: 0.5%;
+  height: auto;
+  font-family:
+}
+.inline {
+  display: inline;
+  margin-left: 0.8em;
 }

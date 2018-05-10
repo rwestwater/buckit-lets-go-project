@@ -4,12 +4,12 @@ require_relative( '../models/city.rb' )
 
 #READ FUNCTIONS
 get '/city' do
- @cities = City.all()
- erb (:'city/index')
+  @cities = City.all()
+  erb (:'city/index')
 end
 
 get '/city/new' do
-  @countries = Country.all
+  @countries = Country.all()
   erb(:'city/new')
 end
 
@@ -22,7 +22,7 @@ end
 
 #UPDATE FUNCTIONS
 get '/city/:id/edit' do
-  @countries = Country.all
+  @countries = Country.all()
   @city = City.find(params[:id])
   erb(:'/city/edit')
 end

@@ -9,8 +9,8 @@ get '/visit' do
 end
 
 get '/visit/new' do
-  @countries = Country.all
-  @cities = City.all
+  @countries = Country.all()
+  @cities = City.all()
   erb(:'visit/new')
 end
 
@@ -23,7 +23,7 @@ end
 
 #UPDATE FUNCTIONS
 get '/visit/:id/edit' do
-  @cities = City.all
+  @cities = City.all()
   @visit = Visit.find(params[:id])
   erb(:'/visit/edit')
 end
